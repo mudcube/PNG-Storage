@@ -2,5 +2,6 @@ This is a demo of using PNG to compress and decompress data to be used in Javasc
 
 The library is easy to use, there are two functions;
 
-PNGStorage.encode(data)
-PNGStorage.decode(data, callback)
+PNGStorage.encode(data);
+
+PNGStorage.decode(data, callback);

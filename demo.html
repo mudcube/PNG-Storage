@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<script src="./PNGStorage.js" type="text/javascript"></script>
+	<title>PNG Compress</title>
+</head>
+<body>
+<script type="text/javascript">
+
+var demoEncode = function() {
+	var image = document.querySelector('#image');
+	var data0 = document.querySelector('#data0');
+	var data1 = document.querySelector('#data1');
+	data1.value = PNGStorage.encode(data0.value);
+};
+
+var demoDecode = function() {
+	var image = document.querySelector('#image');
+	var data0 = document.querySelector('#data0');
+	var data1 = document.querySelector('#data1');
+	PNGStorage.decode(data1.value, function(data) {
+		data0.value = data;	
+	});
+};
+
+</script>
+<textarea id="data0" style="width: 400px; height: 300px; float: left;">
+A "Hello world" program is a computer program that outputs "Hello, world" on a display device. Because it is typically one of the simplest programs possible in most programming languages, it is by tradition often used to illustrate to beginners the most basic syntax of a programming language, or to verify that a language or system is operating correctly.
+
+In a device that does not display text, a simple program to produce a signal, such as turning on an LED, is often substituted for "Hello world" as the introductory program.
+</textarea>
+<textarea id="data1" style="width: 400px; height: 300px; float: left;">
+data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAACQklEQVQoU3WSS09TURSFv9P77LtQQ0gc2Bj+g2MsDWp42dsYpxiIOBAM4MCfYZw71vTSADapUqVOiANnJurIxKFRaCnt7eO2t9dDwYEYz+zss8/aa6+1xGTqqm9kbjERKhImi+NsU4wsMN+GE72AqUNnK01sNopuOHh2mNNHsb740C8ke0zympjIIQAlX+DzEOw9RTNN1nHYLoaZ4YTdKRMroiAWn6R85fAO2qDGwbtvXEtfIZFQybfiEsKHsM6C85O6EmS8qOBkdhASXWyuLPt2WGXWU+goJmVvcE5TUFH6WIpLrdtn3wuCKrCMHbzBPOL++qKv90yEW2LgztG71IDjUQ7KLW4MZ3bRGaU7eUw7qaHLPjpypeXVlJ/QMtS24lIcufxMBMP0qNKgQgiqLaaNIEZfRSsHJFUbLWRJqql7/pFlENgKMTYn+BGyiVWlonsLjJxJS88UuKUB7lyPIaGPbxBr6ylf8yDQytIQBqVYbagw9gz8aayYRFExLMGha6NKi8Tao2VfqcdpRxuUHJNsvEU9YDC295ynl5cYG99lSj1TvTSiDEGVXgaxkVr1+7ldabxFRKkSLCY5vAsfXhzRtMwztbdVoue0C8kA9KWPa0uP/abIMyhbmNM9Oto+FeMmaUfWZEiSgSxus0+3JDBkAOAXXye+I1IPNnz0BrmWiR0zuC4NMKTD4XoNW8gQ7r3iy8VIerflx80VP2MLgrkg4lihmXCJazsMuvO05QT97UuefWqdJvGv80/hYsP/7r8BQ6vuCLo8wMYAAAAASUVORK5CYII=
+</textarea>
+<br style="clear:both">
+<input value="encode" type="button" onclick="demoEncode()" style="font-size: 1em"><br>
+<input value="decode" type="button" onclick="demoDecode()" style="font-size: 1em"><br><br>
+</body>
+</html>
